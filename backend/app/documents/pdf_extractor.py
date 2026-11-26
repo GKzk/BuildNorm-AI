@@ -5,7 +5,7 @@ perform OCR and does not claim to reconstruct tables or normative hierarchy.
 """
 
 from dataclasses import dataclass
-import fitz
+import pymupdf
 
 
 class PdfExtractionError(ValueError):
@@ -50,7 +50,7 @@ def extract_pdf_text(pdf_bytes: bytes) -> PdfExtraction:
         raise PdfExtractionError("The PDF file is empty.")
 
     try:
-        document = fitz.open(stream=pdf_bytes, filetype="pdf")
+        document = pymupdf.open(stream=pdf_bytes, filetype="pdf")
     except (fitz.FileDataError, RuntimeError) as exc:
         raise PdfExtractionError("The file is not a readable PDF.") from exc
 
