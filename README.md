@@ -45,7 +45,7 @@ BuildNorm AI — российский SaaS-проект для поиска, а�
    ```bash
    python -m venv .venv
    # Windows PowerShell:
-   .venv\\Scripts\\Activate.ps1
+   .venv\Scripts\Activate.ps1
    # macOS/Linux:
    # source .venv/bin/activate
    pip install -e ".[dev]"
