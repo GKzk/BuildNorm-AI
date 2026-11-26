@@ -14,7 +14,7 @@
 - [ ] Add database migrations
 - [ ] Add document upload endpoint
 - [ ] Add file checksum and metadata
-- [ ] Extract PDF text with page references
+- [x] Extract PDF text with page references (initial PyMuPDF implementation and tests)
 - [ ] Add OCR fallback for scanned files
 - [ ] Preserve headings, clauses, tables, and appendices where possible
 - [ ] Track source provenance and rights basis
