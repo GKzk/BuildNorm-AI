@@ -63,3 +63,17 @@ Local development uses Docker Compose for PostgreSQL and Qdrant. Production infr
 - Authorize every file access.
 - Audit uploads, downloads, deletion, and administrative source changes.
 - Treat uploaded documents as untrusted input.
+
+
+## Initial PDF extraction implementation
+
+The first document-processing slice uses PyMuPDF to extract text page by page and
+retain text-block bounding boxes in PDF page coordinates. Page numbers are 1-based.
+The extractor accepts PDF bytes and returns a typed result; it rejects empty,
+unreadable, zero-page, and password-protected files.
+
+Known limitations:
+- No OCR: image-only/scanned pages may produce empty text.
+- No guaranteed table reconstruction.
+- No automatic recognition of headings, clauses, appendices, or normative hierarchy.
+- Extracted text is untrusted input and must not be treated as validated normative evidence.
