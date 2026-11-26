@@ -5,6 +5,7 @@ perform OCR and does not claim to reconstruct tables or normative hierarchy.
 """
 
 from dataclasses import dataclass
+
 import pymupdf
 
 
@@ -51,7 +52,7 @@ def extract_pdf_text(pdf_bytes: bytes) -> PdfExtraction:
 
     try:
         document = pymupdf.open(stream=pdf_bytes, filetype="pdf")
-    except (fitz.FileDataError, RuntimeError) as exc:
+    except (pymupdf.FileDataError, RuntimeError) as exc:
         raise PdfExtractionError("The file is not a readable PDF.") from exc
 
     with document:
