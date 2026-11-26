@@ -1,4 +1,5 @@
 import pymupdf
+
 import pytest
 
 from app.documents.pdf_extractor import PdfExtractionError, extract_pdf_text
