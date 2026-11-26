@@ -5,8 +5,6 @@ perform OCR and does not claim to reconstruct tables or normative hierarchy.
 """
 
 from dataclasses import dataclass
-from typing import Any
-
 import fitz
 
 
